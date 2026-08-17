@@ -1,0 +1,21 @@
+@import url("reset.css");
+
+:root {
+    --bg: #121316;
+    --surface: #18171d;
+
+    --purple: #6842d9;
+    --lavender: #a89ccf;
+    --muted: #77727f;
+    --white: #f4f2ee;
+
+    --gold: #e6b357;
+
+    --divider: rgb(168 156 207 / 0.15);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--white);
+    line-height: 1.5;
+}
