@@ -261,10 +261,6 @@ footer {
     padding-right: 12px;
 }
 
-#contact__note img {
-    width: 100px;
-}
-
 #contact__note p {
     display: flex;
     align-items: center;
@@ -387,5 +383,9 @@ footer {
             color-mix(in srgb, var(--purple) 8%, transparent) 75%,
             transparent
         );
+    }
+
+    #contact__note img {
+        width: 100px;
     }
 }

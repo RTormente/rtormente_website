@@ -90,6 +90,26 @@ function openQR() {
     createModal(qr);
 }
 
+function includeQR(e) {
+    const note = document.getElementById("contact__note");
+    const qr = note.querySelector("#qrimg");
+
+    if (e.matches) {
+        if (!qr) {
+            const img = document.createElement("img");
+            img.src = "./img/qrcode.png";
+            img.alt = "QR Code";
+            img.id = "qrimg";
+
+            note.prepend(img);
+        }
+    } else {
+        if (qr) {
+            qr.remove();
+        }
+    }
+}
+
 /**  Generic Function  **/
 
 function createModal(htmlContent) {
@@ -124,6 +144,10 @@ function createModal(htmlContent) {
 }
 
 /**  Page Load  **/
+const mediaQuery = window.matchMedia("(min-width: 801px)");
+
+includeQR(mediaQuery);
+mediaQuery.addEventListener("change", includeQR);
 
 document
     .querySelector("#profile__save")
