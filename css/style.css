@@ -42,8 +42,8 @@ footer {
     color: var(--muted);
 }
 
-.profile,
-.contact {
+#profile,
+#contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -157,6 +157,10 @@ footer {
 
 /* Contact Section */
 
+#contact {
+    position: relative;
+}
+
 .contact__list {
     position: relative;
     display: flex;
@@ -169,7 +173,6 @@ footer {
     padding: 1rem 0;
 }
 
-.contact__list::before,
 .contact__list::after {
     content: "";
     position: absolute;
@@ -255,16 +258,22 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 12px;
+}
+
+#contact__note img {
+    width: 100px;
+}
+
+#contact__note p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     font-size: 0.7rem;
 }
 
-#contact__note {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-#contact__note::before {
+#contact__note p::before {
     content: "";
     flex: 0 0 38px;
     width: 38px;
@@ -274,7 +283,7 @@ footer {
         left center / contain no-repeat;
 }
 
-#contact__note::after {
+#contact__note p::after {
     content: "•";
     flex: 0 0 auto;
     font-weight: 900;
@@ -320,7 +329,7 @@ footer {
 
 @media (hover: hover) and (pointer: fine) {
     .profile__cta:hover {
-        filter: brightness(1.15);
+        filter: brightness(1.3);
         border-color: color-mix(in srgb, var(--lavender) 40%, transparent);
     }
 
@@ -335,5 +344,48 @@ footer {
 
     .contact__card:hover span span:last-child {
         text-decoration: underline;
+    }
+}
+
+/* Media Queries */
+
+@media (max-width: 800px) {
+    #contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            color-mix(in srgb, var(--purple) 8%, transparent) 25%,
+            color-mix(in srgb, var(--purple) 20%, transparent) 50%,
+            color-mix(in srgb, var(--purple) 8%, transparent) 75%,
+            transparent
+        );
+    }
+}
+
+@media (min-width: 800px) {
+    main {
+        display: flex;
+        gap: 4rem;
+    }
+
+    #contact::before {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            transparent,
+            color-mix(in srgb, var(--purple) 8%, transparent) 25%,
+            color-mix(in srgb, var(--purple) 20%, transparent) 50%,
+            color-mix(in srgb, var(--purple) 8%, transparent) 75%,
+            transparent
+        );
     }
 }
