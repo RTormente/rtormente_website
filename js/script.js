@@ -38,20 +38,19 @@ function generateVCard() {
     return lines.filter(Boolean).join("\r\n");
 }
 
-function openVCard() {
+function downloadVCard() {
     const vcard = generateVCard();
 
     const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
-    /*link.href = url;
+    link.href = url;
     link.download = `rodrigo-tormente.vcf`;
     link.click();
     link.remove();
 
-    URL.revokeObjectURL(url);*/
-    window.location.href = url;
+    URL.revokeObjectURL(url);
 }
 
 /**  Shared  **/
@@ -128,13 +127,13 @@ function createModal(htmlContent) {
 
 document
     .querySelector("#profile__save")
-    .addEventListener("click", () => openVCard());
+    .addEventListener("click", () => downloadVCard());
 
 document.querySelector("#profile__share").addEventListener("click", shared);
 
 document.querySelector("#profile__qr").addEventListener("click", openQR);
 
 if (window.location.hash === "#add") {
-    openVCard();
+    downloadVCard();
     window.history.replaceState(null, null, " ");
 }

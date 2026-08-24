@@ -119,15 +119,20 @@ footer {
     padding: 8px 16px;
     cursor: pointer;
     transition:
-        filter 0.5s ease,
-        border-color 0.5s ease;
+        filter 0.7s ease,
+        border-color 0.7s ease;
 }
 
-#profile__save {
+#profile__whatsapp {
     grid-column: span 2;
     background: linear-gradient(135deg, var(--purple), #5a45c7);
     color: var(--white);
-    font-weight: bold;
+    text-decoration: none;
+}
+
+#profile__whatsapp::before {
+    font-family: "Font Awesome 7 Brands";
+    content: "\f232";
 }
 
 #profile__share {
@@ -235,10 +240,6 @@ footer {
 
 #contact__github::before {
     content: "\f09b";
-}
-
-#contact__whatsapp::before {
-    content: "\f232";
 }
 
 .contact__card > span {
