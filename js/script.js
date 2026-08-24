@@ -75,19 +75,7 @@ function shared() {
 
 /**  QR Code  **/
 function generateQRCode() {
-    //const qrUrl = `${location.origin}${location.pathname}#add`;
-    const qr = document.createElement("img");
-    qr.src = "./img/qr.png";
-    qr.alt = "QR Code";
-    qr.width = 400;
-    qr.height = 400;
-
-    return qr;
-}
-
-function openQR() {
-    const qr = generateQRCode();
-    createModal(qr);
+    const qrUrl = `${location.origin}${location.pathname}#add`;
 }
 
 function includeQR(e) {
