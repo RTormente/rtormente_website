@@ -155,8 +155,6 @@ document
 
 document.querySelector("#profile__share").addEventListener("click", shared);
 
-document.querySelector("#profile__qr").addEventListener("click", openQR);
-
 if (window.location.hash === "#add") {
     downloadVCard();
     window.history.replaceState(null, null, " ");
